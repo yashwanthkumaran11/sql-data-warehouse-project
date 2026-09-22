@@ -1,36 +1,110 @@
-# Data Warehouse and Analytics Project
+SQL Data Warehouse Project
 
-Welcome to the Data Warehouse and Analytics Project repository! 🚀
+I’m happy to share another milestone in my journey toward becoming a Data Engineer — I’ve completed an end-to-end SQL Data Warehouse project.
 
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+This project helped me understand how data moves from raw source systems to a structured, analytics-ready warehouse.
 
-## 🚀 Project Requirements
+🔹 What I worked on
 
-### Building the Data Warehouse (Data Engineering)
+📌 Source Systems
 
-#### Objective
+• Worked with CRM and ERP source data
+• Analyzed source systems, data ownership, business context, and source structures
+• Documented the data flow and integration requirements
 
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+📌 Data Warehouse Architecture
 
-#### Specifications
+Designed a Medallion Architecture with three layers:
 
-- **Data Sources:** Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality:** Cleanse and resolve data quality issues prior to analysis.
-- **Integration:** Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope:** Focus on the latest dataset only; historization of data is not required.
-- **Documentation:** Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+🟤 Bronze Layer
 
-### BI: Analytics & Reporting (Data Analytics)
+• Raw, unprocessed data
+• Source-aligned tables
+• Full-load processing
+• DDL and load scripts
+• Stored procedures
+• Data validation and documentation
 
-#### Objective
+⚪ Silver Layer
 
-Develop SQL-based analytics to deliver detailed insights into:
+• Cleaned and standardized data
+• Data cleansing and normalization
+• Derived columns and data enrichment
+• Data quality and completeness checks
+• Stored procedures and load scripts
 
-- Customer Behavior
-- Product Performance
-- Sales Trends
+🟡 Gold Layer
 
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.
+• Business-ready data
+• Data integration and aggregations
+• Business rules and logic
+• Star-schema-based data model
+• Dimension and fact tables
+• Data catalog and documentation
+
+🔹 Data Modeling
+
+I designed a Gold-layer Star Schema containing:
+
+• gold.dim_customers
+• gold.dim_products
+• gold.fact_sales
+
+The fact table connects with the customer and product dimensions to support analytical use cases.
+
+🔹 ETL & SQL
+
+I worked through the complete ETL process — Extract, Transform and Load, including:
+
+• Data extraction
+• Data cleansing
+• Data standardization
+• Data normalization
+• Derived columns
+• Data enrichment
+• Data integration
+• Data aggregation
+• Business rules
+• Data validation
+
+I also worked with DDL, load scripts, stored procedures, and bulk loading concepts as part of the implementation.
+
+🔹 Documentation & Engineering Practices
+
+One thing I particularly learned from this project is that a Data Engineering project isn't only about writing SQL.
+
+I also worked on:
+
+📁 Data Architecture
+📁 Data Flow
+📁 Data Integration
+📁 Data Layers
+📁 Data Model
+📁 ETL Documentation
+📁 Data Catalog
+📁 Naming Conventions
+📁 Git Repository & Versioning
+📁 Project Documentation
+
+The project structure includes separate areas for datasets, documentation, scripts, and tests, providing an organized development workflow.
+
+💡 Key Learning
+
+This project gave me a practical understanding of how CRM/ERP source data can be ingested, validated, transformed, modeled, and organized into a data warehouse that is ready for reporting and analytics.
+
+It also helped me connect several concepts I had been learning individually — SQL, ETL, Data Modeling, Data Architecture, and Data Warehousing — into one complete workflow.
+
+🚀 What’s Next?
+
+I’m continuing my Data Engineering journey with:
+
+Python → Big Data → Cloud → Apache Airflow
+
+This is one more step toward building stronger fundamentals and working on increasingly real-world Data Engineering projects.
+
+Keep learning. Keep building. Keep improving. 🚀
+
+#DataEngineering #DataWarehouse #SQL #ETL #DataModeling #SQLServer #DataEngineeringJourney #DataWarehouseProject
 
 ## 🛡️ License
 

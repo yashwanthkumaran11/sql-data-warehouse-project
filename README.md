@@ -1,104 +1,243 @@
-SQL Data Warehouse Project
+# SQL Data Warehouse Project
 
-I’m happy to share another milestone in my journey toward becoming a Data Engineer — I’ve completed an end-to-end SQL Data Warehouse project.
+## 📌 Project Overview
 
-This project helped me understand how data moves from raw source systems to a structured, analytics-ready warehouse.
+This project demonstrates the development of an end-to-end SQL Data Warehouse using SQL Server.
 
-🔹 What I worked on
+The project focuses on transforming raw CRM and ERP source data into a structured, clean, and business-ready data warehouse using a Medallion Architecture.
 
-📌 Source Systems
+The warehouse is organized into three layers:
 
-• Worked with CRM and ERP source data
-• Analyzed source systems, data ownership, business context, and source structures
-• Documented the data flow and integration requirements
+- 🟤 Bronze Layer — Raw source data
+- ⚪ Silver Layer — Cleaned and standardized data
+- 🟡 Gold Layer — Business-ready data
 
-📌 Data Warehouse Architecture
+---
 
-Designed a Medallion Architecture with three layers:
+## 🏗️ Data Warehouse Architecture
 
-🟤 Bronze Layer
+The project follows a Medallion Architecture with three layers.
 
-• Raw, unprocessed data
-• Source-aligned tables
-• Full-load processing
-• DDL and load scripts
-• Stored procedures
-• Data validation and documentation
+### 🟤 Bronze Layer
 
-⚪ Silver Layer
+- Raw, unprocessed source data
+- Source-aligned tables
+- Full-load processing
+- DDL and load scripts
+- Stored procedures
+- Data validation and documentation
 
-• Cleaned and standardized data
-• Data cleansing and normalization
-• Derived columns and data enrichment
-• Data quality and completeness checks
-• Stored procedures and load scripts
+### ⚪ Silver Layer
 
-🟡 Gold Layer
+- Cleaned and standardized data
+- Data cleansing and normalization
+- Derived columns
+- Data enrichment
+- Data quality checks
+- Stored procedures and load scripts
 
-• Business-ready data
-• Data integration and aggregations
-• Business rules and logic
-• Star-schema-based data model
-• Dimension and fact tables
-• Data catalog and documentation
+### 🟡 Gold Layer
 
-🔹 Data Modeling
+- Business-ready data
+- Data integration and aggregations
+- Business rules and logic
+- Star-schema-based data model
+- Dimension and fact tables
+- Data catalog and documentation
 
-I designed a Gold-layer Star Schema containing:
+---
 
-• gold.dim_customers
-• gold.dim_products
-• gold.fact_sales
+## 🔄 Source Systems
 
-The fact table connects with the customer and product dimensions to support analytical use cases.
+The project works with two source systems:
 
-🔹 ETL & SQL
+### CRM
 
-I worked through the complete ETL process — Extract, Transform and Load, including:
+Customer Relationship Management data containing:
 
-• Data extraction
-• Data cleansing
-• Data standardization
-• Data normalization
-• Derived columns
-• Data enrichment
-• Data integration
-• Data aggregation
-• Business rules
-• Data validation
+- Customer information
+- Product information
+- Sales transaction data
 
-I also worked with DDL, load scripts, stored procedures, and bulk loading concepts as part of the implementation.
+### ERP
 
-🔹 Documentation & Engineering Practices
+Enterprise Resource Planning data containing:
 
-One thing I particularly learned from this project is that a Data Engineering project isn't only about writing SQL.
+- Customer information
+- Customer location
+- Product category information
 
-I also worked on:
+The CRM and ERP data are integrated through the Bronze, Silver, and Gold layers.
 
-📁 Data Architecture
-📁 Data Flow
-📁 Data Integration
-📁 Data Layers
-📁 Data Model
-📁 ETL Documentation
-📁 Data Catalog
-📁 Naming Conventions
-📁 Git Repository & Versioning
-📁 Project Documentation
+---
 
-The project structure includes separate areas for datasets, documentation, scripts, and tests, providing an organized development workflow.
+## 🔄 Data Flow
 
-💡 Key Learning
+The data flows through the warehouse as:
 
-This project gave me a practical understanding of how CRM/ERP source data can be ingested, validated, transformed, modeled, and organized into a data warehouse that is ready for reporting and analytics.
+**CRM / ERP → Bronze Layer → Silver Layer → Gold Layer → Analytics & Reporting**
 
-It also helped me connect several concepts I had been learning individually — SQL, ETL, Data Modeling, Data Architecture, and Data Warehousing — into one complete workflow.
+The Gold layer contains:
 
-## 🛡️ License
+- `gold.fact_sales`
+- `gold.dim_customers`
+- `gold.dim_products`
 
-This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
+---
 
-## 👨‍💻 About Me
+## 🔗 Data Integration
 
-I'm an aspiring Data Engineer passionate about **SQL, Data Warehousing, and Big Data**, building practical projects to develop real-world data engineering skills.
-mission to share knowledge and make working with data enjoyable and engaging!
+CRM and ERP data are integrated to build a unified analytical data model.
+
+The integration includes:
+
+- Customer information
+- Product information
+- Product categories
+- Customer location
+- Sales transactions
+
+This integration supports the creation of the Gold-layer fact and dimension tables.
+
+---
+
+## ⭐ Data Modeling
+
+A Gold-layer Star Schema was designed for analytical use cases.
+
+### Fact Table
+
+`gold.fact_sales`
+
+Contains sales-related measures and keys such as:
+
+- `order_number`
+- `product_key`
+- `customer_key`
+- `order_date`
+- `shipping_date`
+- `due_date`
+- `sales_amount`
+- `quantity`
+- `price`
+
+### Customer Dimension
+
+`gold.dim_customers`
+
+Contains customer-related attributes such as:
+
+- `customer_key`
+- `customer_id`
+- `customer_number`
+- `first_name`
+- `last_name`
+- `country`
+- `marital_status`
+- `gender`
+- `birthdate`
+
+### Product Dimension
+
+`gold.dim_products`
+
+Contains product-related attributes such as:
+
+- `product_key`
+- `product_id`
+- `product_number`
+- `product_name`
+- `category_id`
+- `category`
+- `subcategory`
+- `maintenance`
+- `cost`
+- `product_line`
+- `start_date`
+
+---
+
+## 🔧 ETL Process
+
+The project covers the ETL process — Extract, Transform and Load.
+
+### Extract
+
+- Data extraction from CRM and ERP source files
+- Source data analysis
+- Data ingestion into the Bronze layer
+
+### Transform
+
+- Data cleansing
+- Data standardization
+- Data normalization
+- Derived columns
+- Data enrichment
+- Data integration
+- Data aggregation
+- Business rules and logic
+
+### Load
+
+- Full-load processing
+- Truncate and insert
+- Stored procedures
+- Loading data across Bronze and Silver layers
+
+---
+
+## ✅ Data Validation
+
+Validation was performed across the different layers to check:
+
+- Data completeness
+- Schema consistency
+- Data correctness
+- Data integration
+- Data quality
+
+---
+
+## 📚 Documentation
+
+The project includes documentation for:
+
+- Data Architecture
+- Data Flow
+- Data Integration
+- Data Layers
+- Data Model
+- ETL
+- Data Catalog
+- Naming Conventions
+- Project Documentation
+
+---
+
+## 📁 Project Structure
+
+```text
+sql-data-warehouse-project/
+│
+├── datasets/
+│
+├── docs/
+│   ├── data_architecture
+│   ├── data_catalog
+│   ├── data_flow
+│   ├── data_integration
+│   ├── data_layers
+│   ├── data_model
+│   ├── ETL
+│   └── naming_conventions
+│
+├── scripts/
+│   ├── bronze/
+│   ├── silver/
+│   └── gold/
+│
+├── tests/
+│
+├── README.md
+└── LICENSE

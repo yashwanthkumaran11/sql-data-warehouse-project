@@ -94,18 +94,6 @@ This project gave me a practical understanding of how CRM/ERP source data can be
 
 It also helped me connect several concepts I had been learning individually — SQL, ETL, Data Modeling, Data Architecture, and Data Warehousing — into one complete workflow.
 
-🚀 What’s Next?
-
-I’m continuing my Data Engineering journey with:
-
-Python → Big Data → Cloud → Apache Airflow
-
-This is one more step toward building stronger fundamentals and working on increasingly real-world Data Engineering projects.
-
-Keep learning. Keep building. Keep improving. 🚀
-
-#DataEngineering #DataWarehouse #SQL #ETL #DataModeling #SQLServer #DataEngineeringJourney #DataWarehouseProject
-
 ## 🛡️ License
 
 This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.

@@ -241,3 +241,12 @@ sql-data-warehouse-project/
 │
 ├── README.md
 └── LICENSE
+
+## 📜 License
+
+This project is licensed under the MIT License.
+You are free to use, modify, and share this project with proper attribution.
+
+## 👨‍💻 About Me
+
+I'm an aspiring Data Engineer passionate about SQL, Data Warehousing, and Big Data, building practical projects to develop real-world Data Engineering skills.
